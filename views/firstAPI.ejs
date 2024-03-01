@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Library Search API Example</title>
+</head>
+<body>
+  <h1>Open Library Search</h1>
+  <label for="search-input">Search for a book:</label>
+  <input type="text" id="search-input">
+  <button onclick="searchBooks()">Search</button>
+  <div id="search-results"></div>
+
+  <script>
+    async function searchBooks() {
+      try {
+        const query = document.getElementById('search-input').value.trim();
+        if (!query) {
+          alert('Please enter a search query.');
+          return;
+        }
+
+        // Make a GET request to the Open Library Search API
+        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
+        const data = await response.json();
+
+        // Display search results on the webpage
+        const searchResultsDiv = document.getElementById('search-results');
+        searchResultsDiv.innerHTML = '';
+
+        data.docs.forEach(book => {
+          const title = book.title;
+          const author = book.author_name ? book.author_name.join(', ') : 'Unknown Author';
+          const coverURL = book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : 'https://via.placeholder.com/150';
+
+          const bookDiv = document.createElement('div');
+          bookDiv.innerHTML = `
+            <div>
+              <img src="${coverURL}" alt="Book Cover" style="width: 100px; height: auto;">
+              <p><strong>Title:</strong> ${title}</p>
+              <p><strong>Author:</strong> ${author}</p>
+            </div>
+          `;
+
+          searchResultsDiv.appendChild(bookDiv);
+        });
+      } catch (error) {
+        console.error('Error fetching book search results:', error);
+      }
+    }
+  </script>
+</body>
+</html>

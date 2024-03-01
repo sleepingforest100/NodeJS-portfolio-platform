@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Cat Images</title>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Cat Images</h1>
+
+  <button onclick="getRandomCat()">Get Random Cat Image</button>
+
+  <div id="cat-images"></div>
+
+  <script>
+    // Function to fetch random cat images
+    async function getRandomCat() {
+      const apiKey = 'live_ptDchpNErMsCx4Dh7UaEzaRorDnmv7jfpAunHRvMuUMULxCZlZP3viaxDwhK7S8b';
+      const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=10&api_key=${apiKey}`;
+
+      try {
+        // Make a GET request to the API endpoint
+        const response = await fetch(apiUrl);
+
+        // Parse the JSON response
+        const data = await response.json();
+
+        // Display the random cat images
+        const catImagesDiv = document.getElementById('cat-images');
+        catImagesDiv.innerHTML = '';
+
+        data.forEach(cat => {
+          const img = document.createElement('img');
+          img.src = cat.url;
+          catImagesDiv.appendChild(img);
+        });
+      } catch (error) {
+        console.error('Failed to fetch random cat images:', error);
+      }
+    }
+  </script>
+</body>
+</html>
