@@ -11,7 +11,7 @@ This project aims to create a Portfolio Platform using Node.js, Express.js, and 
 3. [APIs](#apis)
 4. [Sending Messages with Nodemailer](#sending-messages-with-nodemailer)
 5. [Project Organization and Design](#project-organization-and-design)
-6. [Setup Instructions](#you-need:)
+6. [Setup Instructions](#you-need)
 
 ## Authentication and Authorization
 ### User Registration
@@ -44,7 +44,7 @@ This project aims to create a Portfolio Platform using Node.js, Express.js, and 
 - EJS is used for frontend rendering to enhance the user interface with thoughtful design elements.
 - The application is visually appealing and responsive.  
 
-## You need:
+## You need
 - NodeJs
 - Database (MongoDB) Free Cluster   
 
