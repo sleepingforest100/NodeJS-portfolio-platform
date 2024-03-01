@@ -11,7 +11,7 @@ This project aims to create a Portfolio Platform using Node.js, Express.js, and 
 3. [APIs](#apis)
 4. [Sending Messages with Nodemailer](#sending-messages-with-nodemailer)
 5. [Project Organization and Design](#project-organization-and-design)
-6. [Setup Instructions](#setup-instructions)
+6. [Setup Instructions](#you-need:)
 
 ## Authentication and Authorization
 ### User Registration
