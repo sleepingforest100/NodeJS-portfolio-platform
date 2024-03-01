@@ -42,11 +42,20 @@ This project aims to create a Portfolio Platform using Node.js, Express.js, and 
 
 ### Responsive Design and User Interface
 - EJS is used for frontend rendering to enhance the user interface with thoughtful design elements.
-- The application is visually appealing and responsive.
+- The application is visually appealing and responsive.  
+
+## You need:
+- NodeJs
+- Database (MongoDB) Free Cluster   
+
+Create a .env file to store your credentials. Example below:
+
+MONGODB_URI=mongodb+srv://<username>:<password>@clusterName.xxxxxxx.mongodb.net/blog
+JWT_SECRET=MySecretBlog
 
 ## Setup Instructions
 1. Clone the repository from GitHub.
-2. Install dependencies using `npm install`.
+2. Install dependencies using `npm install` , `npm run dev`.
 3. Set up MongoDB and grant IP access.
 4. Create a `.env` file and configure environment variables like `PORT`, `MONGODB_URI`, `JWT_SECRET`, `GMAIL_APP_PASSWORD`.
 5. Run the server using `node app.js`.
