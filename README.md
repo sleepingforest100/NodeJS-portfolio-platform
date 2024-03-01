@@ -50,7 +50,7 @@ This project aims to create a Portfolio Platform using Node.js, Express.js, and 
 
 Create a .env file to store your credentials. Example below:
 
-MONGODB_URI=mongodb+srv://<username>:<password>@clusterName.xxxxxxx.mongodb.net/blog
+MONGODB_URI=mongodb+srv://<username>:<password>@clusterName.xxxxxxx.mongodb.net/blog   
 JWT_SECRET=MySecretBlog
 
 ## Setup Instructions
